@@ -95,6 +95,14 @@ def search(request):
     if superhost is True:
         filter_args["host__superhost"] = True
 
+    if len(s_amenities) > 0:
+        for s_amenity in s_amenities:
+            filter_args["amenities__pk"] = int(s_amenity)
+
+    if len(s_facilities) > 0:
+        for s_facility in s_facilities:
+            filter_args["facilities__pk"] = int(s_facility)
+
     print(filter_args)
 
     rooms = models.Room.objects.filter(**filter_args)
