@@ -122,7 +122,7 @@ def github_callback(request):
             raise GithubException()
     except GithubException:
         # send error message
-        return redirect(reverse("user:login"))
+        return redirect(reverse("users:login"))
 
 
 def kakao_login(request):
