@@ -206,7 +206,6 @@ class UpdateProfileView(UpdateView):
     fields = (
         "first_name",
         "last_name",
-        "avatar",
         "gender",
         "bio",
         "birthdate",
